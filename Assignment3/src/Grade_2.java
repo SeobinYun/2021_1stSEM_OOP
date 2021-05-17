@@ -1,18 +1,18 @@
 import java.util.Scanner;
 
 public class Grade_2 {
-    private int math;
+    private int math; // math, science, english 필드를 private로 선언
     private int science;
     private int english;
 
-    Grade_2(int math, int science, int english){
+    Grade_2(int math, int science, int english){ // Grade_2의 생성자
         this.math = math;
         this.science = science;
         this.english = english;
     }
 
-    private int average(){
-        if(math>=0 && science>=0 && english>=0) {
+    private int average(){ // 평균을 return하는 average() method
+        if(math>=0 && science>=0 && english>=0) { // 입력된 수가 0 이상일 경우만 평균값을 리턴하도록 함.
             return (math + science + english) / 3;
         }
         else{
