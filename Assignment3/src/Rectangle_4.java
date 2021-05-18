@@ -1,10 +1,10 @@
 public class Rectangle_4 {
-    private int x_position;
-    private int y_position;
-    private int width;
-    private int height;
+    private int x_position; // x위치
+    private int y_position; // y위치
+    private int width; // 가로
+    private int height; // 세로
 
-    Rectangle_4(int x_position, int y_position, int width, int height) {
+    Rectangle_4(int x_position, int y_position, int width, int height) { // 생성자
         this.x_position = x_position;
         this.y_position = y_position;
         this.width = width;
@@ -13,17 +13,21 @@ public class Rectangle_4 {
 
     int square(){
         // 사각형 넓이 리턴
-        return this.width*this.height;
+        return width*height;
     }
 
     void show(){
-        System.out.println("("+this.x_position+","+this.y_position+")에서 크기가 "+this.width+ "x"+this.height+"인 사각형");
+        System.out.println("("+x_position+","+y_position+")에서 크기가 "+width+ "x"+height+"인 사각형");
         //사각형의 좌표와 넓이를 화면에 출력
     }
 
     boolean contains(Rectangle_4 r){
-        if((this.x_position<r.x_position && this.y_position<r.x_position) &&
-                (this.width+this.x_position>r.width+r.x_position) && (this.height+this.y_position>r.height+r.y_position)){
+        if((x_position<r.x_position && y_position<r.x_position) &&
+                (width+x_position>r.width+r.x_position) && (height+y_position>r.height+r.y_position)){
+            // r이 현 사각형 안에 있으려면 
+            // 1. r의 x, y 좌표값이 현 사각형의 좌표값보다 커야함
+            // 2. 현 사각형의 가로 + x값 한게 r의 가로 + x값 한거보다 커야함
+            // 3. 현 사각형의 세로 + y값 한게 r의 세로 + y값 한거보다 커야함
             return true;
         }
         else{

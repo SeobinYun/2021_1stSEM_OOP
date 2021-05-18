@@ -42,14 +42,14 @@ class Phone{
     private String name;
     private String tel;
 
-    Phone(String name, String tel){
+    Phone(String name, String tel){ // 생성자
         this.name = name;
         this.tel = tel;
     }
-    public String getName(){
+    public String getName(){ // name을 리턴하는 메소드
         return name;
     }
-    public String getTel(){
+    public String getTel(){ // age를 리턴하는 메소드
         return tel;
     }
 }
