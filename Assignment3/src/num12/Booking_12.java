@@ -3,31 +3,31 @@ package num12;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
-public class Booking_12 {
-    private String[] S;
-    private String[] A;
-    private String[] B;
-
-    public Booking_12(){
-        String[] S = {"---","---","---","---","---","---","---","---","---","---"};
+class Seat{
+    String[] S;
+    String[] A;
+    String[] B;
+    public Seat() {
         //String[] S = new String[10];
-        String[] A = {"---","---","---","---","---","---","---","---","---","---"};
         //String[] A = new String[10];
-        String[] B = {"---","---","---","---","---","---","---","---","---","---"};
         //String[] B = new String[10];
-    }
+        String[] S = {"---", "---", "---", "---", "---", "---", "---", "---", "---", "---"};
+        String[] A = {"---", "---", "---", "---", "---", "---", "---", "---", "---", "---"};
+        String[] B = {"---", "---", "---", "---", "---", "---", "---", "---", "---", "---"};
 
+    }
+}
+
+public class Booking_12 {
     public static void main(String[] args){
-        Booking_12 ex = new Booking_12();
+        Seat ex = new Seat();
+
 
         for(int i=0; i<ex.S.length; i++){
             System.out.print(" " + ex.S[i]);
         }
         Scanner scanner = new Scanner(System.in);
         System.out.println("명품콘서트홀 예약 시스템입니다.");
-        for(int i=0; i<ex.S.length; i++){
-            System.out.print(" " + ex.S[i]);
-        }
         while(true) {
             System.out.print("예약:1, 조회:2, 취소:3, 끝내기:4>>");
             int num = scanner.nextInt();
@@ -49,7 +49,7 @@ public class Booking_12 {
         }
     }
 
-    static void reservation(Booking_12 a){
+    static void reservation(Seat a){
         Scanner scanner = new Scanner(System.in);
         System.out.print("좌석구분 S(1), A(2), B(3)>>");
         int num = scanner.nextInt();
@@ -102,7 +102,7 @@ public class Booking_12 {
         }
     }
 
-    static void check(Booking_12 a){
+    static void check(Seat a){
         System.out.print("S>>");
         for(int i=0; i<a.S.length; i++){
             System.out.print(" " + a.S[i]);
@@ -123,7 +123,7 @@ public class Booking_12 {
         System.out.println("<<<조회를 완료하였습니다.>>>");
     }
 
-    static void cancel(Booking_12 a){
+    static void cancel(Seat a){
         Scanner scanner = new Scanner(System.in);
         System.out.print("좌석 S:1, A:2, B:3>>");
         int num = scanner.nextInt();
