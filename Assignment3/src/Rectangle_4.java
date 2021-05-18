@@ -22,6 +22,13 @@ public class Rectangle_4 {
     }
 
     boolean contains(Rectangle_4 r){
+        if((this.x_position<r.x_position && this.y_position<r.x_position) &&
+                (this.width+this.x_position>r.width+r.x_position) && (this.height+this.y_position>r.height+r.y_position)){
+            return true;
+        }
+        else{
+            return false;
+        }
         //매개변수로 받은 r이 현 사각형 안에 있으면 true 리턴
     }
 
