@@ -20,6 +20,7 @@ class Dictionary extends PairMap {
         cnt = 0;
     }
 
+    @Override
     String get(String key) { // key 값을 가진 value 리턴. 없으면 null 리턴
         for (int i = 0; i < keyArray.length; i++) { // 배열의 길이만큼 탐색.
             if (key.equals(keyArray[i])) { // key값이 keyArray[i]값과 같다면 value 값 리턴
@@ -29,6 +30,7 @@ class Dictionary extends PairMap {
         return null; // 탐색 다하고 나왔는데도 없으면 null 리턴
     }
 
+    @Override
     void put(String key, String value) { // key와 value를 쌍으로 저장. 기존에 key가 있으면, 값을 value로 수정
         if (cnt == keyArray.length) { // cnt가 배열의 총길이와 같아지면 배열이 꽉 찼다는 메세지 출력
             System.out.println("배열이 꽉 찼습니다.");
@@ -46,6 +48,7 @@ class Dictionary extends PairMap {
         cnt++;
     }
 
+    @Override
     String delete(String key) { // key 값을 가진 아이템(value와 함께) 삭제. 삭제된 value 값 리턴
         for (int i = 0; i < keyArray.length; i++) {
             if (key.equals(keyArray[i])) {
@@ -59,6 +62,7 @@ class Dictionary extends PairMap {
         return null;
     }
 
+    @Override
     int length() {
         return cnt;
     }
